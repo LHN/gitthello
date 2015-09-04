@@ -151,17 +151,17 @@ Trello Board Requirements
 Gitthello assumes that the trello board has at least three lists
 
 ```
-    To Do - where all new issues go when sync'ed
-    Done - where cards are moved to once they have been completed
-    Backlog - where issues are created to if they are labeled as backlog
+To Do - where all new issues go when sync'ed
+Done - where cards are moved to once they have been completed
+Backlog - where issues are created to if they are labeled as backlog
 ```
 
 The names of these lists can be set to something other than the default above by setting the environment variables:
 
 ```
-    BOARDS.ONE.TODO_LIST_NAME='To do list name'
-    BOARDS.ONE.BACKLOG_LIST_NAME='Backlog list name'
-    BOARDS.ONE.DONE_LIST_NAME='Done list name'
+BOARDS.ONE.TODO_LIST_NAME='To do list name'
+BOARDS.ONE.BACKLOG_LIST_NAME='Backlog list name'
+BOARDS.ONE.DONE_LIST_NAME='Done list name'
 ```
 
 Besides those three lists, a board can have as many lists as it likes. Any
@@ -173,7 +173,7 @@ Testing
 To run the synchronization task locally:
 
 ```
-$ rake sync
+$ heroku local -e .env.local bundle exec rake sync
 ```
 
 This will do the synchronization between github and trello. This is also
