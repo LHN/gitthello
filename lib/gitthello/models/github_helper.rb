@@ -2,10 +2,10 @@ module Gitthello
   class GithubHelper
     attr_reader :issue_bucket, :backlog_bucket
 
-    def initialize(oauth_token, repo_for_new_cards, repos_to_consider)
+    def initialize(oauth_token, repos_to, repos_from)
       @github            = Github.new(:oauth_token => oauth_token)
-      @user, @repo       = repo_for_new_cards.split(/\//)
-      @repos_to_consider = repos_to_consider
+      @user, @repo       = repos_to.split(/\//)
+      @repos_from        = repos_from
     end
 
     def create_issue(title, desc)
@@ -43,7 +43,7 @@ module Gitthello
     def retrieve_issues
       @issue_bucket, @backlog_bucket = [], []
 
-      @repos_to_consider.split(/,/).map { |a| a.split(/\//)}.
+      @repos_to.split(/,/).map { |a| a.split(/\//)}.
         each do |repo_owner,repo_name|
         puts "Checking #{repo_owner}/#{repo_name}"
         repeatthis do
