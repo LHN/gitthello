@@ -3,7 +3,6 @@ module Gitthello
     attr_reader :issue_bucket, :backlog_bucket
 
     def initialize(oauth_token, repo_for_new_cards, repos_to_consider)
-      binding.remote_pry
       @github            = Github.new(:oauth_token => oauth_token)
       @user, @repo       = repos_for_new_cards.split(/\//)
       @repos_to_consider = repos_to_consider
