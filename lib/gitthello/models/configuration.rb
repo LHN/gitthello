@@ -2,7 +2,7 @@ require 'ostruct'
 
 module Gitthello
   class Configuration
-    attr_reader :boards, :trello, :github
+    attr_reader :boards, :trello, :github, :colors, :users
 
     def initialize
       @trello = OpenStruct.new(:dev_key => ENV['TRELLO_DEV_KEY'],
