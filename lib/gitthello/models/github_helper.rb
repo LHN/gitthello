@@ -4,7 +4,7 @@ module Gitthello
 
     def initialize(oauth_token, repos_to, repos_from)
       @github            = Github.new(:oauth_token => oauth_token)
-      @user, @repo       = repos_to.split(/\//)
+      @user, @repo       = repos_to.split(/\//) if not nil
       @repos_from        = repos_from
     end
 
