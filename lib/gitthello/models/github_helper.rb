@@ -2,10 +2,11 @@ module Gitthello
   class GithubHelper
     attr_reader :issue_bucket, :backlog_bucket
 
-    def initialize(oauth_token, repos_to, repos_from)
+    def initialize(oauth_token, repo_for_new_cards, repos_to_consider)
+      binding.remote_pry
       @github            = Github.new(:oauth_token => oauth_token)
-      @user, @repo       = repos_to.split(/\//) if not nil
-      @repos_from        = repos_from
+      @user, @repo       = repos_for_new_cards.split(/\//)
+      @repos_to_consider = repos_to_consider
     end
 
     def create_issue(title, desc)
