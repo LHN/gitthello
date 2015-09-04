@@ -15,7 +15,6 @@ module Gitthello
       @trello_helper = TrelloHelper.new(Gitthello.configuration.trello.token,
                                         Gitthello.configuration.trello.dev_key,
                                         @config.name,
-                                        self,
                                         @list_map)
     end
 
