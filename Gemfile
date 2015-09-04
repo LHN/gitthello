@@ -7,8 +7,9 @@ gem 'rake'
 gem 'github_api'
 gem 'ruby-trello', '~> 1.1.0'
 gem 'unicorn'
-gem 'dotenv', :git => 'https://github.com/gorenje/dotenv.git', :branch => 'squaure_brackets'
+gem 'dotenv'
 
 group :development do
   gem 'pry'
+  gem 'pry-remote'
 end
